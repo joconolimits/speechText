@@ -6,7 +6,8 @@ angular.module('starter.controllers', [])
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
+  //  $scope.$on('$ionicView.enter', function (e) {
+  //      annyang.abort();
   //});
 
   // Form data for the login modal
@@ -51,30 +52,32 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
 
- 
-  $scope.langCode = {};
-  $scope.options = [
-    { label: 'one', value: 1 },
-    { label: 'two', value: 2 }
-  ];
-  //$scope.myLang = $scope.language;
-  alert($scope.language);
-
-  $scope.callText ='';
-  var commands = {
-      '*val': function (val) {
-          $scope.callText += "\n" + val;
-          
-          $scope.$apply();
-      }
-  };
-  annyang.addCommands(commands);
-  annyang.setLanguage($scope.language);
-  //annyang.setLanguage('bg');
-  annyang.debug();
-    // Start listening. You can call this here, or attach this call to an event, button, etc.
-  annyang.start();
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('PlaylistCtrl', function ($scope, $stateParams) {
+
+})
+
+.controller('browseCtrl', function ($scope) {
+    
+    $scope.callText = '';
+    var commands = {
+        '*val': function (val) {
+            $scope.callText += "\n" + val;
+
+            $scope.$apply();
+        }
+    };
+    annyang.addCommands(commands);
+    annyang.setLanguage('sr');
+    //annyang.setLanguage('bg');
+    annyang.debug();
+    // Start listening. You can call this here, or attach this call to an event, button, etc.
+
+        annyang.start();
+
+    $scope.stopCall = function () {
+        console.log("I don't listen");
+        annyang.abort()
+    }
 });

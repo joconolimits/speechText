@@ -1,7 +1,12 @@
 <ion-view view-title="Browse">
   <ion-content>
     <h1>Browse</h1>
+      <button class="button button-negative" ng-click="stopCall()">
+          <i class="icon ion-ios-telephone"></i>
+      </button>
 
-<button onclick="window.open('templates/playlists.html', '_self', 'location=yes');">test</button>
+      <div>
+          <pre>{{callText}}</pre>
+      </div>
   </ion-content>
 </ion-view>
