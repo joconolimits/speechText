@@ -50,6 +50,27 @@ angular.module('starter.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+
+ 
+
+  $scope.options = [
+    { label: 'one', value: 1 },
+    { label: 'two', value: 2 }
+  ];
+  //console.log($scope.language.value);
+  $scope.callText;
+  var commands = {
+      '*val': function (val) {
+          $scope.callText = val;
+          $scope.$apply();
+      }
+  };
+  annyang.addCommands(commands);
+  annyang.setLanguage('sr');
+  //annyang.setLanguage('bg');
+  annyang.debug();
+    // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {

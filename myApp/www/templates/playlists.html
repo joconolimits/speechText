@@ -5,5 +5,16 @@
         {{playlist.title}}
       </ion-item>
     </ion-list>
+      <!--<select id="lang"  ng-change="changed()" ng-model="lang">
+          <option value="sr">Serbian</option>
+          <option value="bg">Bulgarian</option>
+          <option value="en" selected="selected">English</option>
+      </select>-->
+      <select ng-model="language"
+              ng-options="opt as opt.label for opt in options"></select>
+      <p>{{language.value}}</p>
+      <button ng-click="annyang.start()">speak it</button>
+      
+      <div>{{callText}}</div>
   </ion-content>
 </ion-view>
