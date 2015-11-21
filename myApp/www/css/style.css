@@ -1,1 +1,10 @@
 /* Empty. Add your own CSS if you like */
+#login_page {
+background-color:#558b2f ;
+}
+
+#groups {
+    background-image:url('/www/img/group.png');
+    width:40px;
+    height:40px;
+}
