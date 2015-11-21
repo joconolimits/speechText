@@ -1,4 +1,50 @@
-<ion-view view-title="Playlists">
+<ion-view>
+    <!--<ion-tabs>
+
+        <ion-tab title="call" icon-on="icon ion-ios-telephone">
+           
+        </ion-tab>
+
+        <ion-tab title="contacts" icon-on="icon ion-android-contacts">
+           
+        </ion-tab>
+
+        <ion-tab title="favorite" icon-on="icon ion-ios-star">
+          
+        </ion-tab>
+
+    </ion-tabs>-->
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+        <div class="tabs">
+            <a class="tab-item active" href="#">
+                <i class="icon ion-ios-telephone"></i>
+                Test
+            </a>
+            <a class="tab-item" href="#">
+                <i class="icon ion-android-contacts"></i>
+                Favorites
+            </a>
+            <a class="tab-item" href="#">
+                <i class="icon ion-ios-star"></i>
+                Settings
+            </a>
+        </div>
+    </div>
+    <div class="tabs tabs-icon-top">
+        <a class="tab-item">
+            <i class="icon ion-home"></i>
+            Home
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-star"></i>
+            Favorites
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-gear-a"></i>
+            Settings
+        </a>
+    </div>
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
@@ -13,9 +59,18 @@
       <select ng-model="language" ng-change="change()" 
               ng-options="opt as opt.label for opt in options"></select>
       <p>{{language.value}}</p>
+<<<<<<< HEAD
       <button ng-click="annyang.start()">speak it</button>
           <div>
               <pre>{{callText}}</pre>
           </div>
 </ion-content>
+=======
+      <button class="button button-positive" ng-click="annyang.start()">
+          <i class="icon ion-ios-telephone"></i>
+      </button>
+      
+      <div>{{callText}}</div>
+  </ion-content>
+>>>>>>> 46b20ffb88ed8ccbc86136eb9e01b095ceb4eae2
 </ion-view>
