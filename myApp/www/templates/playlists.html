@@ -10,11 +10,12 @@
           <option value="bg">Bulgarian</option>
           <option value="en" selected="selected">English</option>
       </select>-->
-      <select ng-model="language"
+      <select ng-model="language" ng-change="change()" 
               ng-options="opt as opt.label for opt in options"></select>
       <p>{{language.value}}</p>
       <button ng-click="annyang.start()">speak it</button>
-      
-      <div>{{callText}}</div>
-  </ion-content>
+          <div>
+              <pre>{{callText}}</pre>
+          </div>
+</ion-content>
 </ion-view>

@@ -52,21 +52,24 @@ angular.module('starter.controllers', [])
   ];
 
  
-
+  $scope.langCode = {};
   $scope.options = [
     { label: 'one', value: 1 },
     { label: 'two', value: 2 }
   ];
-  //console.log($scope.language.value);
-  $scope.callText;
+  //$scope.myLang = $scope.language;
+  alert($scope.language);
+
+  $scope.callText ='';
   var commands = {
       '*val': function (val) {
-          $scope.callText = val;
+          $scope.callText += "\n" + val;
+          
           $scope.$apply();
       }
   };
   annyang.addCommands(commands);
-  annyang.setLanguage('sr');
+  annyang.setLanguage($scope.language);
   //annyang.setLanguage('bg');
   annyang.debug();
     // Start listening. You can call this here, or attach this call to an event, button, etc.
